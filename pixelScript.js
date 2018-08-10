@@ -10,6 +10,10 @@ document.addEventListener(`DOMContentLoaded`, (ev) => {
     table.style.alignContent = `center`;
     table.width = `339px`;
 
+    const h1 = document.createElement(`h1`);
+    table.appendChild(h1);
+    h1.textContent = `Pixel Art Maker`;
+
     let currentColor;
     let drawColor;
     // difine my canvas div layout and add 
@@ -18,10 +22,16 @@ document.addEventListener(`DOMContentLoaded`, (ev) => {
             const canvasDiv = document.createElement('div');
             canvasDiv.setAttribute(`class`, `canvasDiv`);
             table.appendChild(canvasDiv);
+            // controlling click behavior
             canvasDiv.addEventListener('click', (ev) => {
                 currentColor = document.getElementById(`currentDiv`);
                 drawColor = currentColor.className;
                 canvasDiv.setAttribute(`class`, drawColor);
+            // controlling mouse-style behavior
+            // canvasDiv.addEventListener('click', (ev) => {
+            //     currentColor = document.getElementById(`currentDiv`);
+            //     drawColor = currentColor.className;
+            //     canvasDiv.setAttribute(`class`, drawColor);
             });
         };
     };

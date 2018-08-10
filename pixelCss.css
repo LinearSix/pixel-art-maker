@@ -1,0 +1,66 @@
+body {
+    background-color: black;
+    align-content: center;
+    align-self: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+div {
+    width: 15px;
+    height: 15px;
+    border: 1px solid gray;
+    float: left;
+    background: white;
+    border-radius: 5px;
+}
+.canvasDiv {
+    background: white;
+}
+.palDiv {
+    width: 15px;
+    height: 15px;
+    border: 1px solid gray;
+    float: left;
+    background: blue;
+    border-radius: 5px;
+}
+.currentDiv {
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    float: left;
+    background: white;
+    border-radius: 5px;
+}
+.red {
+    background: red;
+}
+.orange {
+    background: orange;
+}
+.yellow {
+    background: yellow;
+}
+.green {
+    background: green;
+}
+.blue {
+    background: blue;
+}
+.indigo {
+    background: indigo;
+}
+.violet {
+    background: violet;
+}
+.white {
+    background: white;
+}
+.gray {
+    background: gray;
+}
+.black {
+    background: black;
+}

@@ -7,13 +7,18 @@ body {
     margin-top: auto;
     margin-bottom: auto;
 }
+table {
+    align-self: center;
+    align-content: center;
+    width: 440px;
+}
 h1 {
     font-family: verdana;
     color: white;
 }
 div {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     border: 1px solid gray;
     float: left;
     background: white;
@@ -22,49 +27,100 @@ div {
 .canvasDiv {
     background: white;
 }
-.palDiv {
-    width: 15px;
-    height: 15px;
+/* .palDiv {
+    width: 20px;
+    height: 20px;
     border: 1px solid gray;
     float: left;
     background: blue;
     border-radius: 4px;
-}
+} */
 .currentDiv {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     border: 1px solid black;
     float: left;
     background: white;
     border-radius: 5px;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+h3 {
+    font-family: Verdana;
+    color: white;
 }
 .red {
     background: red;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
 }
 .orange {
     background: orange;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
 }
 .yellow {
     background: yellow;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
 }
 .green {
     background: green;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
 }
 .blue {
     background: blue;
+    color: white;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
 }
 .indigo {
     background: indigo;
+    color: white;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
 }
 .violet {
     background: violet;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
 }
 .white {
     background: white;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
 }
 .gray {
     background: gray;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
 }
 .black {
     background: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
 }

@@ -1,84 +1,63 @@
-console.log(`pixelScript.js is working`);
+console.log(`pixelScipt.js working`);
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener(`DOMContentLoaded`, (ev) => {
 
-document.body.onload = addElements;
+    // MAKE 2 x 2 CANVAS OF SQUARES
+    // make table to contain canvas divs
+    const table = document.createElement('table');
+    document.body.appendChild(table);
+    table.align = `center`;
+    table.style.alignContent = `center`;
+    table.width = `339px`;
 
-    // ADD THE ONLOAD ELEMENTS
-    function addElements() { 
-        
-        // MAKE TABLE
-        const table = document.createElement('table');
-        document.body.appendChild(table);
-        table.align = `center`;
-        table.style.alignContent = `center`;
-        table.width = `550px`;
+    const h1 = document.createElement(`h1`);
+    table.appendChild(h1);
+    h1.textContent = `Pixel Art Maker`;
 
-        // MAKE THE CANVAS DIVS
-        let divNum = 1
-        for (i = 0; i < 10; i++) {
-            for (j = 0; j < 10; j++) {
-                let divBrick = document.createElement(`div`);
-                table.appendChild(divBrick);
-                divBrick.id = (divNum);
-                divBrick.style.width = `50px`;
-                divBrick.style.height = `50px`;
-                divBrick.textContent = divNum;
-                divNum ++
-            };
+    let currentColor;
+    let drawColor;
+    // difine my canvas div layout and add 
+    for (let i = 0; i < 20; i++) {
+        for (let j = 0; j < 20; j++) {
+            const canvasDiv = document.createElement('div');
+            canvasDiv.setAttribute(`class`, `canvasDiv`);
+            table.appendChild(canvasDiv);
+            // controlling click behavior
+            canvasDiv.addEventListener('click', (ev) => {
+                currentColor = document.getElementById(`currentDiv`);
+                drawColor = currentColor.className;
+                canvasDiv.setAttribute(`class`, drawColor);
+            // controlling mouse-style behavior
+            // canvasDiv.addEventListener('click', (ev) => {
+            //     currentColor = document.getElementById(`currentDiv`);
+            //     drawColor = currentColor.className;
+            //     canvasDiv.setAttribute(`class`, drawColor);
+            });
         };
-        // SPACE FOR INSTRUCTIONS AND MAYBE CURRENT COLOR
-        let divInst = document.createElement('div');
-        table.appendChild(divInst);
-        divInst.style.width = `518px`;
-        divInst.style.height = `20px`;
-        divInst.textContent = `Click on a Color then Click on the Canvas!`
-        divInst.font = `Arial`;
-        divInst.align = `center`;
+    };
 
-        // MAKE THE PALETTE DIVS
-        let divPalNum = 1;
-        let palColor;
-        for (i = 0; i < 10; i++) {
-            let divPal = document.createElement(`div`);
-            table.appendChild(divPal);
-            divPal.id = (divPalNum);
-            switch(divPalNum) {
-                case 1:
-                    palColor = `red`
-                    break;
-                case 2:
-                    palColor = `orange`
-                    break;
-                case 3:
-                    palColor = `yellow`
-                    break;
-                case 4:
-                    palColor = `green`
-                    break;
-                case 5:
-                    palColor = `blue`
-                    break;
-                case 6:
-                    palColor = `indigo`
-                    break;
-                case 7:
-                    palColor = `violet`
-                    break;
-                case 8:
-                    palColor = `white`
-                    break;
-                case 9:
-                    palColor = `gray`
-                    break;
-                case 10:
-                    palColor = `black`
-                    break;
-            };
-            divPal.style.width = `50px`;
-            divPal.style.height = `50px`;
-            divPal.style.backgroundColor = palColor;
-            divPalNum ++
-        };
+    // MAKE PALETTE
+    // make current color div
+    let palClassName = [`red`, `orange`, `yellow`, `green`, `blue`, `indigo`, `violet`, `white`, `gray`, `black`];
+    let palClassArrLen = 94/(palClassName.length);
+
+    const currentDiv = document.createElement('div');
+    currentDiv.setAttribute(`class`, `currentDiv`);
+    currentDiv.id = `currentDiv`;
+    table.appendChild(currentDiv);
+    // currentDiv.setAttribute(`class`, currentClassName[k]);
+    currentDiv.style.width = `339px`;
+
+    // loop through palClassName array to build palette
+    for (let k = 0; k < palClassName.length; k++) {
+        const palDiv = document.createElement('div');
+        palDiv.setAttribute(`class`, `palDiv`);
+        table.appendChild(palDiv);
+        palDiv.setAttribute(`class`, palClassName[k]);
+        palDiv.style.width = `${palClassArrLen}%`;
+
+        palDiv.addEventListener('click', (ev) => {
+            currentDiv.setAttribute(`class`, palClassName[k]);
+        });
     };
 });
